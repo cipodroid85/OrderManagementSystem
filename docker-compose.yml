@@ -1,3 +1,4 @@
+version: "3.8"
 
 services:
   userservice:
@@ -5,15 +6,39 @@ services:
       context: ./UserService
     ports:
       - "5001:80"
+    networks:
+      - app-network
 
   productservice:
     build:
       context: ./ProductService
     ports:
       - "5002:80"
+    depends_on:
+      - postgres
+    networks:
+      - app-network
 
   orderservice:
     build:
       context: ./OrderService
     ports:
       - "5003:80"
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres
+    container_name: productdb
+    environment:
+      POSTGRES_DB: ProductDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
