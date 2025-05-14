@@ -1,7 +1,10 @@
 using ProductService.Services;
+using ProductService.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddDbContext<ProductContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Aggiunta dei servizi al contenitore DI
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
