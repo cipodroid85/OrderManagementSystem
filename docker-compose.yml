@@ -1,0 +1,19 @@
+
+services:
+  userservice:
+    build:
+      context: ./UserService
+    ports:
+      - "5001:80"
+
+  productservice:
+    build:
+      context: ./ProductService
+    ports:
+      - "5002:80"
+
+  orderservice:
+    build:
+      context: ./OrderService
+    ports:
+      - "5003:80"

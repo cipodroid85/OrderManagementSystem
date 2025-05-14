@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\UserService",
-    "\\UserService\\obj",
+    "\\ProductService\\Dockerfile",
+    "\\UserService\\DockerFile",
     "\\UserService\\obj\\Debug",
     "\\UserService\\obj\\Debug\\net7.0"
   ],
-  "SelectedNode": "\\UserService\\obj\\Debug\\net7.0\\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs",
+  "SelectedNode": "\\UserService",
   "PreviewInSolutionExplorer": false
 }
